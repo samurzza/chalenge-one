@@ -1,0 +1,32 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding:0 ;
+}
+
+.title {
+    width: 100%;
+    height: 120px;
+    background-color: teal;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title h1{
+    font-size: xxx-large;
+}
+
+.body {
+    padding-top: 15px;
+    height: 85%;
+    width: 100%;
+    position: absolute;
+    display: grid;
+    grid-template-columns: 1fr 4fr 2fr 1fr; 
+    gap: 25px;
+
+    grid-template-areas: ". PostBody TagBody .";
+}
+

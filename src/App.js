@@ -1,23 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import "./azoz.css";
+import TitleOne from "./titleOne.js";
+import PostBody from "./PostBody.js";
+import TagBody from "./TagBody.js";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <TitleOne />
+      <div className={"body"}>
+        <PostBody />
+        <TagBody />
+      </div>
     </div>
   );
 }

@@ -1,0 +1,25 @@
+.PostBody {
+    grid-area: PostBody;
+}
+
+.PostBody .content {
+    border: solid 5px teal;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.PostBody .content h2 {
+    width: 100%;
+    text-align: center;
+}
+
+.PostBody .content .br {
+    display: block;
+    width: 100%;
+    height: 2px;
+    margin: 10px 0;
+    background-color: rgb(207, 207, 207);
+}

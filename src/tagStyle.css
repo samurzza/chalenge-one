@@ -1,0 +1,30 @@
+.TagBody {
+    grid-area: TagBody;
+
+}
+
+.TagBody .parent {
+    border: solid 5px teal;
+    width: 100%;
+    padding: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.TagBody .parent div:hover {
+    background-color: #800296;
+}
+
+.TagBody .parent div {
+    background-color: #6e0e7f;
+    color: white;
+    width: 85px;
+    display: flex;
+    border-radius: 10px;
+    font-size: 10px;
+    padding: 0px;
+    padding: 8px;
+    margin: 5px;
+    justify-content: center;
+}
