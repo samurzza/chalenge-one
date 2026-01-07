@@ -1,18 +1,27 @@
-import "./azoz.css";
-import TitleOne from "./titleOne.js";
-import PostBody from "./PostBody.js";
-import TagBody from "./TagBody.js";
+import "./azoz.css"
+import "./StepTwoStyle.css"
+import Steps from "./Steps"
+import StepOne from "./StepOne"
+import StepTwo from "./StepTwo"
 
 function App() {
   return (
-    <div>
-      <TitleOne />
-      <div className={"body"}>
-        <PostBody />
-        <TagBody />
+
+    <div className="body">
+
+      <Steps />
+
+      <div style={{ display: "none" }} className="stepOne">
+        <StepOne />
       </div>
+
+      <div className="StepTwo">
+        <StepTwo />
+      </div>
+
     </div>
-  );
+
+  ); 
 }
 
 export default App;
