@@ -69,8 +69,9 @@
 .StepTwo .swith {
     grid-area: swith;
     position: relative;
+    background-color: hsl(218, 100%, 97%);
+    border-radius: 5px;
 }
-
 
 .StepTwo .bottuns {
     grid-area: Next;
@@ -96,6 +97,7 @@
 
 .StepTwo .bottuns .next:hover {
     background-color: hsl(243, 100%, 62%);
+        transform: rotate(10deg);  
 }
 
 .StepTwo .bottuns .back {
@@ -106,6 +108,13 @@
     position: absolute;
     bottom: 21px;
     font-size: large;
+    cursor: pointer;
+    transition: all .5s ease;
+}
+
+.StepTwo .bottuns .back:hover{
+    transform: rotate(-10deg);
+    color: hsl(243, 100%, 62%);
 }
 
 .swith {
@@ -116,16 +125,44 @@
 
 .swith .theSwith {
     display: flex;
-    justify-content: left;
+    justify-content:  left ;
     align-items: center;
-    background-color: #ddd;
+    background-color: hsl(213, 96%, 18%);
     width: 35px;
     height: 15px;
-    padding: 5px;
+    padding: 5px 2px;
+    border-radius: 10px;
+    transition: all 0.5s ease;
 }
-.swith .theSwith span {
+
+
+.swith .theSwith span.left {
     width: 12px;
     height: 12px;
-    background-color: red;
+    background-color: hsl(0, 100%, 100%);
     display: block;
+    border-radius: 50%;
+    transition: all 0.3s linear(0 0%, 0 2.27%, 0.02 4.53%, 0.04 6.8%, 0.06 9.07%, 0.1 11.33%, 0.14 13.6%, 0.25 18.15%, 0.39 22.7%, 0.56 27.25%, 0.77 31.8%, 1 36.35%, 0.89 40.9%, 0.85 43.18%, 0.81 45.45%, 0.79 47.72%, 0.77 50%, 0.75 52.27%, 0.75 54.55%, 0.75 56.82%, 0.77 59.1%, 0.79 61.38%, 0.81 63.65%, 0.85 65.93%, 0.89 68.2%, 1 72.7%, 0.97 74.98%, 0.95 77.25%, 0.94 79.53%, 0.94 81.8%, 0.94 84.08%, 0.95 86.35%, 0.97 88.63%, 1 90.9%, 0.99 93.18%, 0.98 95.45%, 0.99 97.73%, 1 100%);
+    margin-left: 0px;
+}
+
+.swith .theSwith span.rite {
+    width: 12px;
+    height: 12px;
+    background-color: hsl(0, 100%, 100%);
+    display: block;
+    border-radius: 50%;
+    transition: all 0.3s linear(0 0%, 0 2.27%, 0.02 4.53%, 0.04 6.8%, 0.06 9.07%, 0.1 11.33%, 0.14 13.6%, 0.25 18.15%, 0.39 22.7%, 0.56 27.25%, 0.77 31.8%, 1 36.35%, 0.89 40.9%, 0.85 43.18%, 0.81 45.45%, 0.79 47.72%, 0.77 50%, 0.75 52.27%, 0.75 54.55%, 0.75 56.82%, 0.77 59.1%, 0.79 61.38%, 0.81 63.65%, 0.85 65.93%, 0.89 68.2%, 1 72.7%, 0.97 74.98%, 0.95 77.25%, 0.94 79.53%, 0.94 81.8%, 0.94 84.08%, 0.95 86.35%, 0.97 88.63%, 1 90.9%, 0.99 93.18%, 0.98 95.45%, 0.99 97.73%, 1 100%);
+    margin-left: 18px;
+}
+
+
+.StepTwo input[type="checkbox"] {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    left: 20px;
+    top: 39%;
+    z-index: -1;
+    
 }

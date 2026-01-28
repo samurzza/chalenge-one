@@ -9,7 +9,7 @@
 }
 
 @font-face {
-    font-family: "aziz-test-Regular";
+    font-family: "aziz-test-Regular" ;
     src: url(/fonts/Ubuntu-Regular.ttf);
 }
 
@@ -82,7 +82,7 @@ body {
 
 .steps {
     grid-area: steps;
-    background-image: url(/images/bg-sidebar-desktop.svg);
+    background-image: url(./images/bg-sidebar-desktop.svg);
     background-repeat: no-repeat;
     height: 100%;
     position: relative;
@@ -90,7 +90,6 @@ body {
 
 .body .stepOne {
     grid-area: step;
-    /* background-color: cadetblue; */
 
     display: grid;
     grid-template-rows: repeat(5, 1fr);
@@ -138,6 +137,11 @@ body {
 
 
 
+.Next:hover {
+    background-color: hsl(243, 100%, 62%);
+    transform: rotate(8deg);
+}
+
 .Next {
     cursor: pointer;
     transition: all 0.5s ease;
@@ -153,6 +157,28 @@ body {
     position: absolute;
     right: 0;
     bottom: 21px;
+}
+
+.Nextd {
+    cursor: pointer;
+    transition: all 0.5s ease;
+    FONT-WEIGHT: 500;
+    WIDTH: 100PX;
+    HEIGHT: 45PX;
+    BORDER-RADIUS: 11PX;
+    BACKGROUND-COLOR: hsl(213, 96%, 18%);
+    COLOR: WHITE;
+    FONT-SIZE: small;
+    BORDER: NONE;
+    OUTLINE: NONE;
+    position: absolute;
+    right: 0;
+    bottom: 21px;
+}
+
+.Nextd:hover {
+    background-color: hsl(0, 100%, 62%);
+    transform: rotate(-8deg);
 }
 
 input:hover {

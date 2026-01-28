@@ -1,0 +1,80 @@
+div.stepThree {
+    grid-area: step;
+}
+
+div.cuntent {
+    /* background-color: hsl(218, 100%, 97%); */
+    width: 90%;
+    height: 95px;
+    margin: 15px 0;
+    border: 1px solid hsl(243, 100%, 62%);
+    position: relative;
+    border-radius: 15px;
+    
+}
+
+input[type="checkbox"] {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    left: 20px;
+    top: 39%;
+}
+
+.center {
+        position: absolute;
+        left: 20%;
+        top: 27%;
+}
+
+.salery{
+        width: 60px;
+        position: absolute;
+        right: 25px;
+        top: 38px;
+}
+
+.stepThree .bottuns {
+    /* grid-area: Next; */
+    margin-top: 126px;
+    position: relative;
+}
+
+.stepThree .bottuns .next {
+    cursor: pointer;
+    transition: all 0.5s ease;
+    FONT-WEIGHT: 500;
+    WIDTH: 100PX;
+    HEIGHT: 45PX;
+    BORDER-RADIUS: 11PX;
+    BACKGROUND-COLOR: hsl(213, 96%, 18%);
+    COLOR: WHITE;
+    FONT-SIZE: small;
+    BORDER: NONE;
+    OUTLINE: NONE;
+    position: absolute;
+    right: 0;
+    bottom: 21px;
+}
+
+.stepThree .bottuns .next:hover {
+    background-color: hsl(243, 100%, 62%);
+    transform: rotate(10deg);
+}
+
+.stepThree .bottuns .back {
+    width: 100px;
+    height: 45px;
+    border: none;
+    background-color: white;
+    position: absolute;
+    bottom: 21px;
+    font-size: large;
+    cursor: pointer;
+    transition: all .5s ease;
+}
+
+.stepThree .bottuns .back:hover {
+    transform: rotate(-10deg);
+    color: hsl(243, 100%, 62%);
+}
