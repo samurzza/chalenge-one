@@ -53,17 +53,7 @@
 .StepTwo .planOne {
     /* grid-area: plan; */
     position: relative;
-
-}
-
-.StepTwo .palnTwo {
-    /* grid-area: plan; */
-    position: relative;
-}
-
-.StepTwo .planThree {
-    /* grid-area: plan; */
-    position: relative;
+    transition: all 0.5s ease;
 }
 
 .StepTwo .swith {
@@ -156,13 +146,3 @@
     margin-left: 18px;
 }
 
-
-.StepTwo input[type="checkbox"] {
-    width: 25px;
-    height: 25px;
-    position: absolute;
-    left: 20px;
-    top: 39%;
-    z-index: -1;
-    
-}

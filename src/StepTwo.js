@@ -8,51 +8,69 @@ import { useState , useEffect } from "react";
 
 export default function StepTwo({data , setData }){
   
-  const [switchClass, setSwitchClass] = useState("left");
-  
-  const [planPrice, setPlanPrice] = useState({ name: ``, praice: null });
+  // const [switchClass, setSwitchClass] = useState("left");
+  const [ bottun, setBottun] = useState({ class: "Nextd", state: true });
 
-
-  const [Arcade , setArcade] = useState(9)
-  const [Advanced , setAdvanced] = useState(12)
-  const [Pro , setPro] = useState(15)
-  
-  const [selected, setSelected] = useState(null);
-  
   
   function swoth(){
-    if(switchClass == "left"){
-      setSwitchClass("rite");
-      setData({...data, planType:`yl`});
-      setArcade(Arcade * 10);
-      setAdvanced(Advanced * 10);
-      setPro(Pro * 10);
-    }else if (switchClass == "rite") {
-      setSwitchClass("left");
-      setData({ ...data, planType: `mo` });
-      setArcade(9);
-      setAdvanced(12);
-      setPro(15);
-
+    if (data.switchClass == "left") {
+      setData({ ...data, switchClass: "rite", planType: "yr"  , planPraice: data.planType == "mo" ? data.planPraice * 10 : data.planPraice / 10});
+      // setData({ ...data, });
+    } else if (data.switchClass == "rite") {
+      setData({ ...data, switchClass: "left", planType: "mo" , planPraice: data.planType == "mo" ? data.planPraice * 10 : data.planPraice / 10 });
+      // setData({ ...data, });
     }
   }
   
+  const [selectedPlan, setSelectedPlan] = useState(null) 
+
+  const plans = [
+    {name: "Arcade", basePrice: 9,img: arcade,id: 1,},
+    { name: "Advanced", basePrice:  12 , img: advanced, id: 2 },
+    { name: "Pro", basePrice:  15, img: pro, id: 3 },
+  ];
+
+  let contetn = plans.map(plan => {
+      return (
+        <div
+          key={plan.id}
+          style={{
+            boxShadow:
+              data.planName === plan.name
+                ? "0 0 11px 0 hsl(243, 100%, 62%)"
+                : "",
+          }}
+          onClick={() => {
+            setData({
+              ...data,
+              planName: plan.name,
+              planPraice:
+                data.planType === "mo" ? plan.basePrice : plan.basePrice * 10,
+            });
+          }}
+          className="planOne planStyle"
+          id="Arcade"
+        >
+          <img src={plan.img} alt="" />
+          <h4>{plan.name}</h4>
+          <p>
+            ${data.planType == "mo" ? plan.basePrice : plan.basePrice * 10}/
+            {data.planType}
+          </p>
+        </div>
+      );
+  })
+  
+
+useEffect(() => {
+  setBottun(
+    data.planName !== ""
+      ? { class: "Next", state: false }
+      : { class: "Nextd", state: true },
+  );
+}, [data.planName]);
 
 
-  // useEffect(() => {
-  //   if (praiceType == "mo") {
-  //     setPlanPrice({...planPrice,name: planPrice.name,praice: planPrice.praice / 10});
-  //     setData({ ...data, planPraice: planPrice.praice, planName: planPrice.name });
-  //   } else if (praiceType == "yl") {
-  //     setPlanPrice({...planPrice,name: planPrice.name,praice: planPrice.praice * 10});
-  //     setData({ ...data, planPraice: planPrice.praice, planName: planPrice.name });
-  //   }
-
-  // }, [praiceType]);
-
-  // useEffect(() => {
-  //   setData({ ...data, planPraice: planPrice.praice, planName: planPrice.name });
-  // }, [planPrice]);
 
   return (
     <>
@@ -61,55 +79,7 @@ export default function StepTwo({data , setData }){
         <p>You have the option of monthly or yearly billing.</p>
       </div>
 
-      <div className="plans">
-        <div
-          style={{ borderColor: selected === "one" ? "blue" : "#ddd" }}
-          onClick={() => {
-            setSelected("one");
-            setPlanPrice({ ...planPrice, name: "Arcade", praice: Arcade });
-          }}
-          className="planOne planStyle"
-          id="Arcade"
-        >
-          <img src={arcade} alt="" />
-          <h4>Arcade</h4>
-          <p>
-            ${Arcade}/{data.planType}
-          </p>
-        </div>
-
-        <div
-          style={{ borderColor: selected === "two" ? "blue" : "#ddd" }}
-          onClick={() => {
-            setSelected("two");
-            setPlanPrice({ ...planPrice, name: "Advanced", praice: Advanced });
-          }}
-          className="palnTwo planStyle"
-          id="Advanced"
-        >
-          <img src={advanced} alt="" />
-          <h4>Advanced</h4>
-          <p>
-            ${Advanced}/{data.planType}
-          </p>
-        </div>
-
-        <div
-          style={{ borderColor: selected === "three" ? "blue" : "#ddd" }}
-          onClick={() => {
-            setSelected("three");
-            setPlanPrice({ ...planPrice, name: "Pro", praice: Pro });
-          }}
-          className="planThree planStyle"
-          id="Pro"
-        >
-          <img src={pro} alt="" />
-          <h4>pro</h4>
-          <p>
-            ${Pro}/{data.planType}
-          </p>
-        </div>
-      </div>
+      <div className="plans">{contetn}</div>
 
       <div className="swith">
         <p>Monthly</p>
@@ -119,30 +89,37 @@ export default function StepTwo({data , setData }){
             swoth();
           }}
         >
-          <span className={switchClass} />
+          <span className={data.switchClass} />
         </div>
         <p>Yearly</p>
       </div>
-
-      <button
-        onClick={() => {
-          console.log(data);
-        }}
-      >
-        click
-      </button>
 
       <div className="bottuns">
         <Link to={"/"}>
           <button className="back">Go Back</button>
         </Link>
         <Link to={"/step-three"}>
-          <button className="next">Next Step</button>
+          <button
+            onClick={() => {
+              // const dat = plans.find((d) => d.name === data.planName);
+              // setData({
+              //   ...data,
+              //   planName: dat.name,
+              //   planPraice:
+              //     data.planType == "mo" ? dat.basePrice : dat.basePrice * 10,
+              // });
+            }}
+            disabled={bottun.state}
+            className={bottun.class}
+          >
+            Next Step
+          </button>
         </Link>
       </div>
     </>
   );
 }
+
 
 
 
