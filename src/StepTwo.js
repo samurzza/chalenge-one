@@ -52,11 +52,14 @@ export default function StepTwo({data , setData }){
           id="Arcade"
         >
           <img src={plan.img} alt="" />
+          <div>
+
           <h4>{plan.name}</h4>
           <p>
             ${data.planType == "mo" ? plan.basePrice : plan.basePrice * 10}/
             {data.planType}
           </p>
+          </div>
         </div>
       );
   })

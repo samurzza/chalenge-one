@@ -1,0 +1,39 @@
+@media (min-width:366px) {
+img {
+        margin: 130px 253px 45px
+    }
+
+h1 {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    color: hsl(213, 96%, 18%)
+}
+
+p {
+    color: hsl(231, 11%, 63%);
+    text-Align: center;
+    margin: 19px;
+    font-Size: large
+}
+}
+
+@media (min-width:345px) and (max-width:365px) {
+img {
+        margin: 17% 39%
+    }
+
+h1 {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    color: hsl(213, 96%, 18%)
+}
+
+p {
+    color: hsl(231, 11%, 63%);
+    text-Align: center;
+    margin: 19px;
+    font-Size: large
+}
+}

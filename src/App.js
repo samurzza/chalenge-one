@@ -46,29 +46,7 @@ let [formData, setFormData] = useState({
 
   return (
     <>
-      <div className="steps2">
-        <ol>
-          {steps.map((step) => {
-            return (
-              <li key={step.id}>
-                <span
-                  style={{
-                    backgroundColor:
-                      location.pathname === step.path
-                        ? " hsl(229, 24%, 87%)"
-                        : "",
-                    color: location.pathname === step.path ? "black" : "",
-                  }}
-                >
-                  {step.id}
-                </span>
-                <span>{step.name}</span>
-                <span>{step.label}</span>
-              </li>
-            );
-          })}
-        </ol>
-      </div>
+    
       <div className="body">
         <Steps />
         <Routes>

@@ -40,10 +40,13 @@ if (imput3) {
 
   return (
     <>
+    <div className="titleThree">
+
       <h1>Pick add-ons</h1>
       <p style={{ marginBottom: "75px" }}>
         Add-ons help enhance your gaming experience.
       </p>
+    </div>
 
       <div
         className="cuntent"

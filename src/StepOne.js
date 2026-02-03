@@ -1,38 +1,50 @@
 import "./azoz.css";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-export default function StepOne({data , setData}) {
-  
-  const [ bottun, setBottun] = useState({ class: "Nextd", state: true });
+export default function StepOne({ data, setData }) {
+  function useIsMobile() {
+    const [isMobile, setIsMobile] = useState(
+      window.matchMedia("(max-width: 768px)").matches,
+    );
+
+    useEffect(() => {
+      const media = window.matchMedia("(max-width: 768px)");
+      const handler = () => setIsMobile(media.matches);
+
+      media.addEventListener("change", handler);
+      return () => media.removeEventListener("change", handler);
+    }, []);
+
+    return isMobile;
+  }
+
+  const [bottun, setBottun] = useState({ class: "Nextd", state: true });
 
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const phoneRegex = /^\d{10,12}$/;
-  const nameRegex = /^(?!.*\b([a-z])\1{1,}\b)[a-z]{3,}(?:\s[a-z]{3,})?$/i;;
+  const nameRegex = /^(?!.*\b([a-z])\1{1,}\b)[a-z]{3,}(?:\s[a-z]{3,})?$/i;
 
-  const [color,setColor] = useState("")
+  const [color, setColor] = useState("");
   const [phoneClolor, setPhoneClolor] = useState("");
   const [nameClolor, setNameClolor] = useState("");
 
-  function check(){
-    if (
-      data.name !== `` &&
-      data.email !== `` &&
-      data.PhonNumber !== ``
-    ) {
+  function check() {
+    if (data.name !== `` && data.email !== `` && data.PhonNumber !== ``) {
       if (
         emailRegex.test(data.email) &&
         phoneRegex.test(data.PhonNumber) &&
-        nameRegex.test(data.name) ) {
+        nameRegex.test(data.name)
+      ) {
         setBottun({ ...bottun, class: "Next", state: false });
       } else {
         setBottun({ ...bottun, class: "Nextd", state: true });
       }
 
-      if (emailRegex.test(data.email)){
-          setColor(``);
+      if (emailRegex.test(data.email)) {
+        setColor(``);
       } else {
-          setColor(`red`);
+        setColor(`red`);
       }
 
       if (phoneRegex.test(data.PhonNumber)) {
@@ -49,8 +61,9 @@ export default function StepOne({data , setData}) {
     }
   }
 
-    return (
-      <>
+  return (
+    <>
+      
         <div className="one">
           <h1>Personal info</h1>
           <p>Please provide your name, email address, and phone number.</p>
@@ -109,6 +122,6 @@ export default function StepOne({data , setData}) {
             </button>
           </Link>
         </div>
-      </>
-    );
+    </>
+  );
 }
