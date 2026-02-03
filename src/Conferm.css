@@ -1,16 +1,16 @@
-@media (min-width:366px) {
-img {
+@media (min-width:376px) {
+.conferm img {
         margin: 130px 253px 45px
     }
 
-h1 {
+.conferm h1 {
     display: flex;
     justify-content: center;
     margin-bottom: 30px;
     color: hsl(213, 96%, 18%)
 }
 
-p {
+.conferm p {
     color: hsl(231, 11%, 63%);
     text-Align: center;
     margin: 19px;
@@ -18,19 +18,19 @@ p {
 }
 }
 
-@media (min-width:345px) and (max-width:365px) {
-img {
+@media (min-width:345px) and (max-width:375px) {
+.conferm img {
         margin: 17% 39%
     }
 
-h1 {
+.conferm h1 {
     display: flex;
     justify-content: center;
     margin-bottom: 30px;
     color: hsl(213, 96%, 18%)
 }
 
-p {
+.conferm p {
     color: hsl(231, 11%, 63%);
     text-Align: center;
     margin: 19px;
